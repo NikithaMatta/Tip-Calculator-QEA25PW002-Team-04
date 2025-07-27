@@ -1,0 +1,26 @@
+body.dark-mode {
+  background: #211820;
+  color: #e7d9e3;
+}
+
+.dark-mode .tip-card {
+  background-color: #0a0a23;
+  color: #cdd9e5;
+}
+
+.dark-mode input,
+.dark-mode select {
+  background-color: #452b42;
+  border-color: #5e3758;
+  color: #e7d9e3;
+}
+
+.dark-mode input::placeholder,
+.dark-mode select:invalid {
+  color: #fff;
+}
+
+.dark-mode .confirmation-message {
+  color: #c8aac2;
+  background-color: #452b42;
+}

@@ -1,0 +1,26 @@
+body.light-mode {
+  background: #f0e6ee;
+  color: #3a2f3b;
+}
+
+.light-mode .tip-card {
+  background-color: #f5faff;
+  color: #1a2d4f;
+}
+
+.light-mode input,
+.light-mode select {
+  background-color: #ebdde7;
+  border-color: #d1b2cb;
+  color: #3a2f3b;
+}
+
+.light-mode input::placeholder,
+.light-mode select:invalid {
+  color: #3a2f3b;
+}
+
+.light-mode .confirmation-message {
+  color: #5d4050;
+  background-color: #ebdde7;
+}

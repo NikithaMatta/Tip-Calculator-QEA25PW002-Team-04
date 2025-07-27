@@ -1,1 +1,159 @@
+/* Reset & Base Setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Calibri', 'Poppins', sans-serif;
+}
 
+.hidden {
+  display: none;
+}
+
+body {
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  animation: backgroundPulse 5s linear infinite;
+}
+
+/* Container & Card Styling */
+.container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.tip-card {
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  transition: all 0.3s ease;
+}
+
+/* Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card-header h1 {
+  font-size: 24px;
+}
+
+/* Input Fields & Select */
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid;
+  font-size: 16px;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.calculate-btn:hover,
+.reset-btn:hover,
+.recalculate-btn:hover {
+  filter: brightness(0.9);
+}
+
+/* Results */
+.results {
+  margin-top: 20px;
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+/* Checkbox */
+.checkbox-group {
+  margin-top: 15px;
+}
+
+/* Inline Label with Checkbox */
+.inline-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 10px 0;
+  font-size: 16px;
+}
+
+.inline-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 6px;
+  accent-color: inherit;
+}
+
+/* Confirmation */
+.confirmation-message {
+  margin-top: 12px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-weight: 500;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.calculate-btn { 
+  background-color: #4caf50; 
+}
+
+.reset-btn { 
+  background-color: #f44336; 
+}
+
+.recalculate-btn { 
+  background-color: #C83F12; 
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes backgroundPulse {
+  0%   { background-color: #0b0f1a; }   
+  25%  { background-color: #0b1b47; } 
+  50%  { background-color: #142d68; } 
+  75%  { background-color: #1d3a73; }
+  100% { background-color: #0b0f1a; }
+}
