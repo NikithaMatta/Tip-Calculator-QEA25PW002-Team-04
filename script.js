@@ -45,7 +45,7 @@ function validateFields() {
     return {};
   }
 
-  if( bill <= 0 || people < 2){
+  if( bill <= 0 || people < 1){
     alert("Please enter valid input");
     return {};
   }
