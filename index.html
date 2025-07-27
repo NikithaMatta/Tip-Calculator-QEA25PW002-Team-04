@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tip Calculator</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/light.css" />
+  <link rel="stylesheet" href="styles/dark.css" />
+  <link rel="stylesheet" href="styles/toggle.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="tip-card">
+      <div class="card-header">
+        <h1>Tip Calculator</h1>
+        <div class="toggle-switch">
+          <span id="sunIcon">☀️</span>
+          <label class="switch">
+            <input type="checkbox" id="modeToggle" onchange="toggleMode()">
+            <span class="slider"></span>
+          </label>
+          <span id="moonIcon">🌙</span>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="billAmount">Bill Amount (₹)</label>
+        <input type="number" id="billAmount" min="0" placeholder=" Enter bill amount">
+      </div>
+
+      <div class="input-group">
+        <label for="serviceRating">Service Rating (1 to 10)</label>
+        <select id="serviceRating">
+            <option value="" hidden>Select a rating</option>
+          <option value="1">1 &nbsp &nbsp - &nbsp Very Poor</option>
+          <option value="2">2 &nbsp &nbsp - &nbsp Poor</option>
+          <option value="3">3 &nbsp &nbsp - &nbsp Fair</option>
+          <option value="4">4 &nbsp &nbsp - &nbsp Below Average</option>
+          <option value="5">5 &nbsp &nbsp - &nbsp Average</option>
+          <option value="6">6 &nbsp &nbsp - &nbsp Slightly Above Average</option>
+          <option value="7">7 &nbsp &nbsp - &nbsp Good</option>
+          <option value="8">8 &nbsp &nbsp - &nbsp  Very Good</option>
+          <option value="9">9 &nbsp &nbsp - &nbsp Excellent</option>
+          <option value="10">10 &nbsp  - &nbsp  Outstanding</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <div class="hidden">
+          <label>Selected Tip Percentage:</label>
+          <span id="tipPercentage">—</span>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="people">Number of People</label>
+        <input type="number" id="people" min="1" placeholder=" Enter number of people" oninput="this.value = this.value.split('.')[0]">
+      </div>
+
+      <div class="button-group">
+        <button class="btn calculate-btn" onclick="calculateTip()">Calculate</button>
+        <button class="btn reset-btn" onclick="resetCalculator()">Reset</button>
+      </div>
+
+      <div class="input-group checkbox-group">
+        <label class="inline-label">
+          <input type="checkbox" id="extraTipCheckbox" disabled onchange="toggleExtraTipBox()">
+          <span>Want to add additional tip?</span>
+        </label>
+      </div>
+
+      <div class="results">
+        <div class="result-item"><span>Tip per Person:</span><span id="tipAmount">₹ &nbsp; 0.00</span></div>
+        <div class="result-item"><span>Tip Amount:</span><span id="totalTip">₹ &nbsp; 0.00</span></div>
+        <div class="result-item"><span>Total per Person:</span><span id="totalAmount">₹ &nbsp; 0.00</span></div>
+        <div class="result-item"><span>Total Bill:</span><span id="totalBill">₹ &nbsp; 0.00</span></div>
+      </div>
+
+      <div id="extraTipInputs" class="hidden">
+        <div class="input-group">
+          <label for="extraTipAmount">Additional Tip Amount (₹)</label>
+          <input type="number" id="extraTipAmount" min="0" placeholder="Enter extra tip" oninput="handleExtraTipInput()">
+        </div>
+
+        <div class="results">
+          <div class="result-item"><span>Additional Tip per Person:</span><span id="extraTipPerPerson">₹ 0.00</span></div>
+        </div>
+
+        <div class="button-group">
+          <button class="btn recalculate-btn" onclick="recalculateWithExtraTip()" disabled>Recalculate</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
