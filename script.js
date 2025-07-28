@@ -87,11 +87,6 @@ function handleExtraTipInput() {
   const extraTip = parseFloat(document.getElementById("extraTipAmount").value) || 0;
   const people = parseInt(document.getElementById("people").value);
 
-  if (isNaN(people) || people <= 0) {
-    alert("Please enter a valid number of people before entering extra tip.");
-    return;
-  }
-
   const perPersonExtra = extraTip / people;
   document.getElementById("extraTipPerPerson").textContent = `₹ ${perPersonExtra.toFixed(2)}`;
 
